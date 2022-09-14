@@ -7,4 +7,4 @@ server.use(cors());
 
 
 
-server.listen(5000)
+server.listen(process.env.PORT, ()=>{console.log("Hello World")})
