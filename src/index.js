@@ -8,7 +8,8 @@ server.use(cors());
 dotenv.config();
 
 server.get("/", async(req, res) => {
-    console.log("try")
+    console.log("try");
+    res.status(200).send("Hello my World")
 });
 
 
