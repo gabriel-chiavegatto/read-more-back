@@ -21,7 +21,7 @@ async function adicionarNovoLivro(req, res) {
             estoque
         }
         await db.collection(collectionBooks).insertOne(insertBook)
-        res.sendStatus(200);
+        res.sendStatus(201);
     } catch (error) {
         res.send(error).status(500);
     }
