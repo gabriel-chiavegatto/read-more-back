@@ -1,9 +1,9 @@
 import { Router } from "express";
 import { cadastrarUsuario } from "../controllers/controllerCadastro.js";
-import { validarCadastro } from "../middlewares/validarCadastro.js";
+import { validarInputsCadastro } from "../middlewares/validarInputsCadastro.js";
 
 const rotaCadastro = Router();
 
-rotaCadastro.post('/cadastro', validarCadastro, cadastrarUsuario);
+rotaCadastro.post('/cadastro', validarInputsCadastro, cadastrarUsuario);
 
 export default rotaCadastro;

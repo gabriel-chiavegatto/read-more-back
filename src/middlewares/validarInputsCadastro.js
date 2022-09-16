@@ -6,9 +6,9 @@ const schemaCadastro = joi.object({
     senha: joi.string().required()
 });
 
-export function validarCadastro(req, res, next){
-    const usuario = req.body;
-    const validacao = schemaCadastro.validate(usuario);
+export function validarInputsCadastro(req, res, next){
+    const cadastro = req.body;
+    const validacao = schemaCadastro.validate(cadastro);
     if(validacao.error){
         return res.sendStatus(422);
     }
