@@ -5,7 +5,7 @@ const collectionBooks = "books-test";
 async function listarTodosOsLivros(req, res) {
     try {
         const books = await db.collection(collectionBooks).find().toArray();
-        res.send(books).status(200);
+        res.send("THIS IS MY BOOKS:",books).status(200);
     } catch (error) {
         res.send(error).status(555);
     }
