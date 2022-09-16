@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 const collectionBooks = "books-test";
 async function listarTodosOsLivros(req, res) {
+    console.log("try listarTodosOsLivros")
     try {
         const books = await db.collection(collectionBooks).find().toArray();
         res.send("THIS IS MY BOOKS:",books).status(200);
@@ -11,6 +12,7 @@ async function listarTodosOsLivros(req, res) {
     }
 }
 async function adicionarNovoLivro(req, res) {
+    console.log("try adicionarNovoLivro")
     try {
         const { titulo, autor, preco, descricao, estoque } = req.body;
         const insertBook = {
