@@ -7,7 +7,7 @@ async function listarTodosOsLivros(req, res) {
         const books = await db.collection(collectionBooks).find().toArray();
         res.send(books).status(200);
     } catch (error) {
-        res.sendStatus(500);
+        res.send(error).status(555);
     }
 }
 async function adicionarNovoLivro(req, res) {
@@ -23,14 +23,14 @@ async function adicionarNovoLivro(req, res) {
         await db.collection(collectionBooks).insertOne(insertBook)
         res.sendStatus(200);
     } catch (error) {
-        res.sendStatus(500);
+        res.send(error).status(500);
     }
 }
 async function listarPropriedadesDoLivro(req, res) {
     try {
         res.sendStatus(200);
     } catch (error) {
-        res.sendStatus(500);
+        res.send(error).status(500);
     }
 }
 async function listarCarrinho(req, res) {
